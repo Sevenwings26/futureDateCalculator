@@ -1,13 +1,12 @@
 # import modules 
-import datetime as dt
-from datetime import timedelta 
-import time as t
+from datetime import timedelta, datetime
+from time import sleep
 
 
 # welcome message 
 print("Welcome! Calculate future date in number, e.g. in 7days time.")
 # sleep to read 
-t.sleep(5)
+sleep(5)
 
 def calculator():    
     
@@ -26,7 +25,7 @@ def calculator():
 knowDate = True
 while knowDate:
     # currentDate 
-    current_date = dt.datetime.now()
+    current_date = datetime.now()
     
     # extract year, month and day 
     current_year = int(current_date.strftime('%Y'))
@@ -34,7 +33,7 @@ while knowDate:
     current_day = int(current_date.strftime('%d'))
 
     # convert back to date format 
-    current_date = dt.datetime(year=current_year, month=current_month, day=current_day)
+    current_date = datetime(year=current_year, month=current_month, day=current_day)
 
     # function call 
     calculator()
@@ -45,6 +44,7 @@ while knowDate:
         continue
     elif continueProgram == 'n':
         knowDate = False
+        sleep(2)
         print("Stay positive")
     else:
         print("Please enter a valid input")
