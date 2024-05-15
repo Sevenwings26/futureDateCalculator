@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Future Date Calculator</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'date_calculator/style.css' %}" />
+</head>
+<body>
+    <h1>Welcome! <br/> Calculate future date in number of days</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Calculate</button>
+    </form>
+    {% if future_date %}
+        <p>{{ days }} Days from now, will be {{ future_date }}.</p>
+    {% endif %}
+</body>
+</html>
